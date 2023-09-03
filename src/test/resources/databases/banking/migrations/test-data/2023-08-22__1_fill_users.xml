@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="1" author="andrei.yurueu1@gmail.com" context="test_data">
+        <sql>
+            INSERT INTO users ("name", surname, birthdate, active)
+            VALUES ('Maria', 'Ivanova', '2001-11-03', TRUE),
+                   ('Vladislav', 'Kolyago', '2000-05-04', TRUE),
+                   ('Ivan', 'Kozlov', '1998-08-01', TRUE),
+                   ('Alex', 'Petrov', '2004-12-04', TRUE)
+        </sql>
+    </changeSet>
+</databaseChangeLog>

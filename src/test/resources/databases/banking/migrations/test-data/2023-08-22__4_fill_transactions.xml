@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="1" author="andrei.yurueu1@gmail.com" context="test_data">
+        <sql>
+            INSERT INTO transactions (amount, type, currency, created_date, sender_account_id, receiver_account_id)
+            VALUES ('100.11', 'WITHDRAW', 'BYN', '2023-12-18T12:11:07.000Z', null, 2),
+                   ('123.22', 'WITHDRAW', 'RUB', '2023-09-22T10:11:07.000Z', null, 1),
+                   ('1000.33', 'REFILL', 'USD', '2023-11-12T11:33:07.000Z', null, 1),
+                   ('9732.44', 'REFILL', 'EUR', '2023-12-04T12:23:07.000Z', null, 2),
+                   ('567.55', 'TRANSFER', 'EUR', '2023-12-04T12:45:07.000Z', 5, 1),
+                   ('12.66', 'TRANSFER', 'EUR', '2022-12-04T12:49:07.000Z', 2, 4)
+        </sql>
+    </changeSet>
+</databaseChangeLog>

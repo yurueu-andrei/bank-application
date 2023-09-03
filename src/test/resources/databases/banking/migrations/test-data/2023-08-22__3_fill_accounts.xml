@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="1" author="andrei.yurueu1@gmail.com" context="test_data">
+        <sql>
+            INSERT INTO accounts (number, balance, currency, created_date, user_id, bank_id, active)
+            VALUES ('0104100100000001', '1234.31', 'BYN', '2001-11-18', 1, 1, TRUE),
+                   ('0104100100000002', '500123.01', 'RUB', '2022-09-22', 3, 1, TRUE),
+                   ('0123400100000001', '49734.62', 'USD', '2013-11-12', 2, 2, TRUE),
+                   ('0104123400000001', '98753.34', 'EUR', '2023-12-04', 4, 3, TRUE),
+                   ('0001000100000001', '10025.85', 'EUR', '2023-12-04', 4, 4, TRUE),
+                   ('0104100100000003', '100.92', 'EUR', '2023-12-04', 4, 1, TRUE),
+                   ('0104100100000004', '0', 'RUB', '2023-12-04', 2, 1, TRUE)
+        </sql>
+    </changeSet>
+</databaseChangeLog>

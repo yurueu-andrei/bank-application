@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <changeSet id="1" author="andrei.yurueu1@gmail.com">
+        <sql>
+            WITH series AS (SELECT GENERATE_SERIES(1, 10) AS sery)
+            INSERT INTO banks (name, active)
+            SELECT
+                CASE
+                    WHEN s.sery = 1 THEN 'CleverBank'
+                    ELSE 'OtherBank' || s.sery
+                END,
+                TRUE
+            FROM series s
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+    <include file="2023-08-22__1_create_currency_enum.xml" relativeToChangelogFile="true"/>
+    <include file="2023-08-22__2_create_transaction_type_enum.xml" relativeToChangelogFile="true"/>
+    <include file="2023-08-22__3_create_users.xml" relativeToChangelogFile="true"/>
+    <include file="2023-08-22__4_create_banks.xml" relativeToChangelogFile="true"/>
+    <include file="2023-08-22__5_create_accounts.xml" relativeToChangelogFile="true"/>
+    <include file="2023-08-22__6_create_transactions.xml" relativeToChangelogFile="true"/>
+</databaseChangeLog>
