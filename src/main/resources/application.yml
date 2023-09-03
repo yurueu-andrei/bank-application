@@ -1,0 +1,19 @@
+postgres:
+  driver: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/postgres
+  user: postgres
+  password: postgres
+interestRate: 1
+exchangeRates: #курс на 27.08.2023
+  BYNUSD: 0.315288
+  BYNRUB: 29.86
+  BYNEUR: 0.292019
+  USDBYN: 3.17
+  RUBBYN: 0.033488
+  EURBYN: 3.42
+  USDRUB: 94.71
+  USDEUR: 0.926198
+  RUBUSD: 0.010558
+  EURUSD: 1.08
+  EURRUB: 102.26
+  RUBEUR: 0.009779

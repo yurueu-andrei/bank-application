@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'by.yurkova'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitVersion = '5.9.2'
+    lombokVersion = '1.18.28'
+    mapstructVersion = '1.5.5.Final'
+}
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+dependencies {
+    implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2'
+
+    implementation 'org.postgresql:postgresql:42.6.0'
+
+    implementation 'org.yaml:snakeyaml:2.1'
+    implementation 'org.apache.pdfbox:pdfbox:3.0.0'
+
+    compileOnly("org.projectlombok:lombok:${lombokVersion}")
+    annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+    implementation("org.mapstruct:mapstruct:${mapstructVersion}")
+    annotationProcessor("org.mapstruct:mapstruct-processor:${mapstructVersion}")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.5.0'
+    testImplementation 'org.testcontainers:junit-jupiter:1.19.0'
+    testImplementation 'org.testcontainers:postgresql:1.19.0'
+    testImplementation 'org.liquibase:liquibase-core:4.23.1'
+
+}
+
+test {
+    useJUnitPlatform()
+}
