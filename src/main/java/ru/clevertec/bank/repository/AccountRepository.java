@@ -50,7 +50,7 @@ public class AccountRepository extends Repository<Account> {
     """;
 
     private static final String UPDATE_ACCOUNT_BALANCE_QUERY = "UPDATE accounts SET balance = ? WHERE id = ?";
-    private static final String APPLY_PERCENTAGE_QUERY = "UPDATE accounts SET balance = balance * ?";
+    private static final String APPLY_PERCENTAGE_QUERY = "UPDATE accounts SET balance = balance * ? WHERE bank_id = 1";
     private static final String DELETE_QUERY = "UPDATE accounts SET active = FALSE WHERE bank_id = 1 AND id = ?";
 
     private final Parser yamlParser;

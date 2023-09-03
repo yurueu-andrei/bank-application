@@ -113,7 +113,8 @@ public class ExceptionHandlerServlet extends HttpServlet {
             String responseValue = mapper
                     .writeValueAsString(new ApiCallDetailedError("Something gone wrong", details));
             Class<?> clazz = (Class<?>) request.getAttribute(ERROR_EXCEPTION_TYPE);
-            if (Objects.equals(clazz, BadRequestException.class) || Objects.equals(clazz, MoneyTransferException.class)) {
+            if (Objects.equals(clazz, BadRequestException.class) || Objects.equals(clazz, MoneyTransferException.class)
+                    || Objects.equals(clazz, UnsupportedOperationException.class)) {
                 response.setStatus(400);
             } else if (Objects.equals(clazz, EntityNotFoundException.class)) {
                 response.setStatus(404);

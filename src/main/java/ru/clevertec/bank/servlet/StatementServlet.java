@@ -190,10 +190,6 @@ public class StatementServlet extends HttpServlet {
             throw new BadRequestException("Invalid HTTP request format");
         }
 
-        if (parts[3].length() != 16) {
-            throw new BadRequestException("Account number must be exactly 16 characters long");
-        }
-
         if (!parts[3].matches("[0-9]{16}$")) {
             throw new BadRequestException("Account number must contain 16 numbers");
         }
