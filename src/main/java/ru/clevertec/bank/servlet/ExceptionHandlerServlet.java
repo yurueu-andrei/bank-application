@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.clevertec.bank.exception.MoneyTransferException;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -112,7 +113,7 @@ public class ExceptionHandlerServlet extends HttpServlet {
             String responseValue = mapper
                     .writeValueAsString(new ApiCallDetailedError("Something gone wrong", details));
             Class<?> clazz = (Class<?>) request.getAttribute(ERROR_EXCEPTION_TYPE);
-            if (Objects.equals(clazz, BadRequestException.class)) {
+            if (Objects.equals(clazz, BadRequestException.class) || Objects.equals(clazz, MoneyTransferException.class)) {
                 response.setStatus(400);
             } else if (Objects.equals(clazz, EntityNotFoundException.class)) {
                 response.setStatus(404);
