@@ -3,7 +3,7 @@ plugins {
     id 'war'
 }
 
-group 'by.yurkova'
+group 'by.yuryeu'
 version '1.0.0'
 
 repositories {
